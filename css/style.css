@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px; /* runding på billederne */
+}
+/* NAVIGATION  */
+header {
+    background-color: #06253f;
+    padding: 1em;
+}
+
+nav ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li {
+    padding: 0.8em;
+}
+
+nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+nav li a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 769px) {
+    #bars {
+        display: none;
+    }                
+    nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+    }
+}
+
+/*  MAIN */
+main {
+    margin: 4em;
+}
+section {
+    margin-bottom: 3em;
+}
+
+/* Første sektion på forsiden */
+section:nth-of-type(1) {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+}
+
+section:nth-of-type(1) div {
+    width: 50%;
+}
+
+section:nth-of-type(1) img {
+    width: 42%;        
+    max-width: 480px;  /* styre maks billedbredde */
+    height: auto;      
+}
+
+/* CTA-sektion */
+section:nth-of-type(2) {
+    display: flex;
+    gap: 1em;
+    justify-content: space-around;
+}
+
+.cta-1, .cta-2, .cta-3 {
+    width: 30%;
+    background-color: #06253f;
+    padding: 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px #06253f;
+
+    /*  ændring: tekstfarver i CTA-bokse */
+    color: #fff; /* gør al tekst i boksen hvid */
+}
+
+.cta-1 h2, .cta-2 h2, .cta-3 h2 {
+    color: #fff; /*  overskrifterne bliver hvide */
+}
+
+.cta-1 a, .cta-2 a, .cta-3 a {
+    color: #f5f3e7; /*  linkfarve lys beige for kontrast */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta-1 a:hover, .cta-2 a:hover, .cta-3 a:hover {
+    text-decoration: underline;
+}
+
+/*  Billeder for minendersider ("Om os" og "Kontakt") */
+.tekst-img img {
+    width: 42%;        /* samme størrelse som forsidebillede */
+    max-width: 480px;  /* tilføjet maks-bredde */
+    height: auto;
+}
+.visually-hidden{
+    border:0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+/* -----mobil version ------- */
+@media screen and (max-width: 768px) {
+
+    header > nav {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .show {
+        display: block;
+        position: absolute;
+        top: 49px;
+        left: 0;
+        background-color: #06253f;
+        width: 100%;
+    }
+
+    button#bars {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        font-size: 24px;
+    }
+
+    section:nth-of-type(1) {
+        flex-direction: column;
+    }
+
+    section:nth-of-type(1) div {
+        width: 100%;
+    }
+
+    section:nth-of-type(1) img {
+        width: 90%;         
+        max-width: 360px;   /* for mobil */
+        margin: 0 auto;
+        display: block;
+    }
+
+    .tekst-img {
+        flex-direction: column;
+    }
+
+    .tekst-img img {
+        width: 90%;         /*  samme som forsiden på mobil */
+        max-width: 360px;   /* for mobil */
+        margin: 0 auto;
+        display: block;
+    }
+
+    section:nth-of-type(2) {
+        flex-direction: column;
+    }
+
+    .cta-1, .cta-2, .cta-3 {
+        width: 100%;
+    }
+}
+/* SKIP LINK TIL WCAG */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: absolute;
+  left: 1rem; 
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  color: #06253f;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,.3);
+  text-decoration: none;
+  z-index: 9999;
+}
